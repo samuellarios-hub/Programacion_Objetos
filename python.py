@@ -6,7 +6,7 @@ import random
 import time
 
 class MascotaLoro:
-    def __init__(self, color_plumaje="Verde"):
+    def _init_(self, color_plumaje="Verde"):
         self.__entrenado = True
         self.nombre = "Kiwi"
         self.frases = ["¡A navegar!", "Ron para el Capitán", "Tierra a la vista"]
@@ -33,7 +33,7 @@ class MascotaLoro:
         print("\n Kiwi da 3 vueltas en el aire y mueve sus alas", self.color)
 
 class Tripulante:
-    def __init__(self, nombre_persona, puntos_vida, fuerza, defensa, rango_social):
+    def _init_(self, nombre_persona, puntos_vida, fuerza, defensa, rango_social):
         self.nombre = nombre_persona
         self.vida = puntos_vida
         self.fuerza = fuerza
@@ -46,7 +46,7 @@ class Tripulante:
         return self.__rango
 
     def atacar(self, objetivo):
-        dano_base = random.randint(max(1, self.fuerza - 5), self.fuerza)
+        dano_base = random.randint(self.fuerza - 5, self.fuerza)
         bloqueo_enemigo = objetivo.defenderse()
         dano_final = dano_base - bloqueo_enemigo
         if dano_final < 2:
@@ -80,8 +80,8 @@ class Tripulante:
         print(self.nombre, "no hace nada especial.")
 
 class Capitan(Tripulante):
-    def __init__(self, nombre_persona, nombre_del_barco):
-        super().__init__(nombre_persona, 150, 45, 10, "Capitán")
+    def _init_(self, nombre_persona, nombre_del_barco):
+        super()._init_(nombre_persona, 150, 45, 10, "Capitán")
         self.barco_que_manda = nombre_del_barco
         # El capitán tiene un loro que lo acompaña
         self.mi_loro = MascotaLoro()
@@ -89,7 +89,7 @@ class Capitan(Tripulante):
     def atacar(self, objetivo):
         print("\nEl Capitán", self.nombre, "ataca ferozmente con su ESPADA.")
         murio_en_combate = super().atacar(objetivo)
-        if not murio_en_combate:
+        if murio_en_combate == False:
             murio_en_combate = self.mi_loro.morder_apoyo(objetivo)
         return murio_en_combate
 
@@ -98,8 +98,8 @@ class Capitan(Tripulante):
         print(self.nombre, "está revisando el mapa del tesoro de su barco", self.barco_que_manda)
 
 class Marinero(Tripulante):
-    def __init__(self, nombre_persona):
-        super().__init__(nombre_persona, 100, 30, 15, "Marinero")
+    def _init_(self, nombre_persona):
+        super()._init_(nombre_persona, 100, 30, 15, "Marinero")
 
     def atacar(self, objetivo):
         print("\nEl Marinero", self.nombre, "dispara un gran CAÑONAZO.")
@@ -110,8 +110,8 @@ class Marinero(Tripulante):
         print(self.nombre, "canta: ¡La vida pirata es la vida mejor!")
 
 class PirataRaso(Tripulante):
-    def __init__(self, nombre_persona):
-        super().__init__(nombre_persona, 120, 25, 20, "Pirata")
+    def _init_(self, nombre_persona):
+        super()._init_(nombre_persona, 120, 25, 20, "Pirata")
 
     def atacar(self, objetivo):
         print("\nEl Pirata", self.nombre, "apunta y dispara su PISTOLA.")
@@ -145,16 +145,16 @@ def iniciar_batalla(lista_jugadores, lista_enemigos):
             print("Número inválido. Elige un número de la lista.")
             continue
 
-        if not vivos_enemigos:
-            break
         objetivo_enemigo = random.choice(vivos_enemigos)
         if atacante.atacar(objetivo_enemigo):
             atacante.curar()
 
+        if not any(e.esta_vivo for e in lista_enemigos):
+            print("\n¡Ganaste la batalla!")
+            break
+
         print("\nTurno del enemigo")
         vivos_enemigos_post = [e for e in lista_enemigos if e.esta_vivo]
-        if not vivos_enemigos_post:
-            break
         enemigo_que_ataca = random.choice(vivos_enemigos_post)
         if enemigo_que_ataca.atacar(atacante):
             enemigo_que_ataca.curar()
