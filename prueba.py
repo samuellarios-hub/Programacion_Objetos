@@ -42,4 +42,13 @@ def calculadora():
         else:
             print("Opción no válida.")
 
-calculadora()
+def tabla_multiplicar():
+
+    numero = int(input("Ingrese un número para mostrar su tabla de multiplicar: "))
+    print("Tabla de multiplicar " , numero)
+    for x in range(1, 11):
+        resultado = numero * x
+        print(numero , 'x' , x , ':' , resultado)
+
+
+    
