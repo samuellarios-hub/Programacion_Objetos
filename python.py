@@ -6,7 +6,7 @@ import random
 import time
 
 class MascotaLoro:
-    def _init_(self, color_plumaje="Verde"):
+    def __init__(self, color_plumaje="Verde"):
         self.__entrenado = True
         self.nombre = "Kiwi"
         self.frases = ["¡A navegar!", "Ron para el Capitán", "Tierra a la vista"]
@@ -33,7 +33,7 @@ class MascotaLoro:
         print("\n Kiwi da 3 vueltas en el aire y mueve sus alas", self.color)
 
 class Tripulante:
-    def _init_(self, nombre_persona, puntos_vida, fuerza, defensa, rango_social):
+    def __init__(self, nombre_persona, puntos_vida, fuerza, defensa, rango_social):
         self.nombre = nombre_persona
         self.vida = puntos_vida
         self.fuerza = fuerza
@@ -80,8 +80,8 @@ class Tripulante:
         print(self.nombre, "no hace nada especial.")
 
 class Capitan(Tripulante):
-    def _init_(self, nombre_persona, nombre_del_barco):
-        super()._init_(nombre_persona, 150, 45, 10, "Capitán")
+    def __init__(self, nombre_persona, nombre_del_barco):
+        super().__init__(nombre_persona, 150, 45, 10, "Capitán")
         self.barco_que_manda = nombre_del_barco
         # El capitán tiene un loro que lo acompaña
         self.mi_loro = MascotaLoro()
@@ -98,8 +98,8 @@ class Capitan(Tripulante):
         print(self.nombre, "está revisando el mapa del tesoro de su barco", self.barco_que_manda)
 
 class Marinero(Tripulante):
-    def _init_(self, nombre_persona):
-        super()._init_(nombre_persona, 100, 30, 15, "Marinero")
+    def __init__(self, nombre_persona):
+        super().__init__(nombre_persona, 100, 30, 15, "Marinero")
 
     def atacar(self, objetivo):
         print("\nEl Marinero", self.nombre, "dispara un gran CAÑONAZO.")
@@ -110,8 +110,8 @@ class Marinero(Tripulante):
         print(self.nombre, "canta: ¡La vida pirata es la vida mejor!")
 
 class PirataRaso(Tripulante):
-    def _init_(self, nombre_persona):
-        super()._init_(nombre_persona, 120, 25, 20, "Pirata")
+    def __init__(self, nombre_persona):
+        super().__init__(nombre_persona, 120, 25, 20, "Pirata")
 
     def atacar(self, objetivo):
         print("\nEl Pirata", self.nombre, "apunta y dispara su PISTOLA.")
