@@ -196,7 +196,7 @@ Este proyecto enseña:
 
 ## 🐛 Notas técnicas
 
-- La vida de cada tripulante varía ±10 unidades (más realista)
+- La vida de cada tripulante varía ±10 unidades 
 - Los enemigos se generan aleatoriamente
 - El orden de ataque en combate es aleatorio
 - El ranking solo guarda los 5 mejores barcos
