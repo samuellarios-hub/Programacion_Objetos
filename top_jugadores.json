@@ -1,0 +1,20 @@
+[
+  {
+    "barco": "Owen",
+    "tripulacion": [
+      "Rouse",
+      "Kaleth",
+      "Elion"
+    ],
+    "puntos": 80
+  },
+  {
+    "barco": "El Temido",
+    "tripulacion": [
+      "Drake",
+      "Paco",
+      "Rata"
+    ],
+    "puntos": 80
+  }
+]
