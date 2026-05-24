@@ -2,7 +2,8 @@
 Juego de Aventura Pirata - Fase 3 POO
 Punto de entrada de la aplicación.
 
-Autor: Samuel Alejandro Larios Ramos
+Autores: Samuel Alejandro Larios Ramos
+Karen Juliana Jaramillo Gutierrez
 """
 
 import tkinter as tk
