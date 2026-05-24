@@ -57,7 +57,6 @@ class Tripulante(ABC):
     def defenderse(self) -> int:
         # La defensa reduce parte del daño entrante de forma aleatoria
         mitigacion: int = random.randint(self.defensa // 4, self.defensa // 2)
-        print("  " + self.nombre + " bloquea parcialmente. Mitigación: " + str(mitigacion))
         return mitigacion
 
     def recibir_danio(self, cantidad: int) -> bool:
@@ -66,10 +65,8 @@ class Tripulante(ABC):
         if self.vida <= 0:
             self.vida = 0
             self.esta_vivo = False
-            print("  💀 " + self.nombre + " ha caído en combate.")
             return True
         else:
-            print("  " + self.nombre + " resiste. Vida: " + str(self.vida))
             return False
 
     def presentarse(self) -> None:
