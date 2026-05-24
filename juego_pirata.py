@@ -1,6 +1,6 @@
 """
 JUEGO DE AVENTURA PIRATA - FASE 3 POO AVANZADA
-Karen Juliana Jaramillo Gutierrez
+Samuel Alejandro Larios Ramos
 """
 
 from __future__ import annotations
