@@ -1,7 +1,6 @@
 """
-JUEGO DE AVENTURA PIRATA - FASE 2 POO AVANZADA
+JUEGO DE AVENTURA PIRATA - FASE 3 POO AVANZADA
 Karen Juliana Jaramillo Gutierrez
-Samuel Alejandro Larios Ramos
 """
 
 from __future__ import annotations
@@ -441,7 +440,7 @@ def main() -> None:
     # Pantalla de bienvenida
     print("\n" + "=" * 50)
     print("    ☠️   JUEGO DE AVENTURA PIRATA   ☠️")
-    print("    Karen J. Jaramillo — Samuel A. Larios")
+    print("    Samuel A. Larios")
     print("=" * 50)
 
     # Muestra el ranking actual
