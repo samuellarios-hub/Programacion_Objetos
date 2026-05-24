@@ -60,7 +60,7 @@ Se abre una ventana. Ahí creas tu barco con nombres que quieras, y empiezas a l
 - Python
 - Tkinter (para las ventanas)
 
-## Autor
+## Autores
 
 Samuel Alejandro Larios Ramos
 
