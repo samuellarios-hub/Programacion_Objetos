@@ -1,1 +1,2 @@
-
+Tkinter viene incluido con Python 3.x
+No requiere instalación con pip
