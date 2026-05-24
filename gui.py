@@ -7,7 +7,7 @@ import tkinter as tk
 from tkinter import messagebox
 from modelos import Capitan, Marinero, PirataRaso, Barco, Tripulante
 from persistencia import cargar_top, actualizar_top
-from juego import iniciar_batalla, PUNTOS_VICTORIA, PUNTOS_DERROTA
+from juego import PUNTOS_VICTORIA, PUNTOS_DERROTA
 import random
 
 
