@@ -25,10 +25,6 @@ venv\Scripts\activate
 ```
 
 
-4. Instala las dependencias:
-```bash
-pip install -r requirements.txt
-```
 
 ## Cómo jugar
 
