@@ -63,3 +63,4 @@ Se abre una ventana. Ahí creas tu barco con nombres que quieras, y empiezas a l
 ## Autor
 
 Samuel Alejandro Larios Ramos
+Karen Juliana Jaramillo Gutierrez
